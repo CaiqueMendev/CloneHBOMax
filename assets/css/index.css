@@ -1,0 +1,309 @@
+@import url("./global.css");
+@keyframes wiggle {
+    0%, 10% {
+        transform: rotate(0);
+    }
+    15% {
+        transform: rotate(-15deg);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    35% {
+        transform: rotate(-10deg);
+    }
+    40%, 100% {
+        transform: rotate(0);
+    }
+}
+@keyframes gradient {
+    0% {
+        background-position: 0%, 50%;
+    }
+    50% {
+        background-position: 100%, 50%;
+    }
+    100% {
+        background-position: 0%, 50%;
+    }
+}
+
+.menu__logo {
+    display: flex;
+}
+
+.menu__item{
+    color: var(--btn-link-bg-color);
+}
+
+.menu__item--button {
+    color: var(--btn-link-bg-color);
+}
+
+.menu__item--button:hover {
+    color: var(--btn-link-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--btn-link-bg-color);
+}
+
+.container {
+    min-height: 100vh;
+}
+
+.header {
+    display: block;
+    background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);;
+    position: relative;
+    margin-top: 50px;
+    padding: 100px 0 300px;
+    animation: gradient 10s ease infinite alternate;
+    background-size: 400% 400%;
+}
+
+.header::after {
+    content: "";
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, var(--primary-color), transparent);
+}
+
+.promotional {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: inherit;
+    gap: 2.5rem;
+    padding: 0 40px;
+
+    .brands {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+
+        .brand__logo {
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    .divider {
+        display: block;
+        justify-self: center;
+        width: 70%;
+        max-width: 700px;
+        height: 7px;
+        background: var(--divider-bg-color);
+    }
+
+    .offer{
+        p.offer__text {
+            font-family: 'Quicksand';
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        p.offer__price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: 'Raleway';
+            text-align: center;
+
+            span {
+                font-size: 1rem;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .header__button {
+        animation: wiggle 2.2s linear infinite;
+
+        
+    }
+
+    .obs {
+        max-width: 300px;
+        text-align: center;
+
+        font-family: 'Quicksand';
+        font-size: 1rem;
+        font-weight: 300;
+
+    }
+}
+
+.lighter {
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Raleway';
+    font-size: 2rem;
+    span {
+        text-align: inherit;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+}
+
+.plans {
+    background: url(../images/background-movies-series.png) no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 1.5rem;
+        text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            font-family: 'Raleway';
+        }
+    }
+}
+.plans_cards {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    gap: 5rem;
+    margin: 2.5rem 0;
+    perspective: 2000px;
+    perspective-origin: top;
+}
+
+.plan-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg-color);
+    padding: 2.5rem 4rem;
+    border-radius: 0.5rem;
+    min-height: 600px;
+    justify-content: space-between;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.plan-card:hover {
+    transform: scale(1.2);
+}
+
+.plan-offer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+
+    
+}
+
+p.price {
+    font-size: 2rem;
+    font-family: 'Raleway';
+    font-weight: 700;
+    color: var(--secondary-color);
+    span {
+        font-size: 1rem
+    }
+}
+
+.plan-descrition {
+    text-align: left;
+    list-style: none;
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+    padding-left: 0.9rem;
+}
+
+.plan-descrition::marker {
+    content: "+";
+    font-size: 2rem;
+    margin: 0 8px 0 0;
+}
+
+.contents__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    margin-top: 5rem;
+}
+
+.contents {
+    margin: 100px auto;
+}
+
+.contents__card {
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+    transition: transform 0.8s background 0.8s border 1s;
+}
+
+.contents__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 2s;
+}
+
+.contents__card:hover .contents__image {
+    opacity: 0;
+}
+
+.contents__card:hover {
+    transform: scale(1.05);
+    border: 2px solid var(--tertiary-color);
+}
+.contents__card:nth-child(1):hover {
+    background-image: url(../images/BannerHover/hbo-hover_0.webp);
+}
+.contents__card:nth-child(2):hover {
+    background-image: url(../images/BannerHover/MAX-Hover.webp);
+}
+.contents__card:nth-child(3):hover {
+    background-image: url(../images/BannerHover/DC-Hover.webp);
+}
+.contents__card:nth-child(4):hover {
+    background-image: url(../images/BannerHover/WB-Hover.webp);
+}
+.contents__card:nth-child(5):hover {
+    background-image: url(../images/BannerHover/CN-Hover.png);
+}
+.contents__card:nth-child(6):hover {
+    background-image: url(../images/BannerHover/UCL-Hover.webp);
+}
+
+footer.container {
+    min-height: 205px;
+    max-width: 1200px;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
